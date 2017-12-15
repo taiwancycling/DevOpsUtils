@@ -74,16 +74,32 @@ if (case == 'string'):
         s = "Django"
         print (s[::-1]) #print string reversely
 
+elif case == "package":
+    if 1:
+        from  pack.my_module import my_func
+        my_func()
+    if 0:
+        import pack.my_module as p
+        p.my_func()
+    if 0:
+        import pack.my_module
+        pack.my_module.my_func()
+    if 0:
+        from my_module import my_func
+        my_func()
+    if 0:
+        import my_module
+        my_module.my_func()
+
 elif (case == "variable"):
     if 1:
-        s = "GLOBAL VARIABLE"
         def my_func():
             x = 10
             print(locals())
             print(locals()['x'])
         my_func()
 
-        print(globals()['s'])
+        print(globals())
 
 
 elif (case == 'regx'):
@@ -286,7 +302,14 @@ elif (case == "for"):
 
 
 elif (case == "function"):
-    if (1):
+    if 1:
+        def sum(*numbers):
+            total = 0
+            for number in numbers:
+                total += number
+            return total
+        print(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+    if (0):
         def end_other(a, b):
             a = a.lower()
             b = b.lower()
@@ -329,7 +352,14 @@ elif (case == "function"):
         print (arrayCheck([0,0,1,2,3,4,5,6]))
 
 elif (case == "lambda"):
-    if (1):
+
+    if 1:
+        min = lambda a, b: a if a < b else b
+        minimum = min
+        print(min(10, 20))
+        print(minimum(10, 20))
+
+    if (0):
         mylist = [1,2,3,4,5,6,7,8]
 
         def even_bool(num):
